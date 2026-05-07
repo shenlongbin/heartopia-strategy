@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heartopia Daily Checklist | Best Daily Tasks and Reward Routine</title>
+  <meta
+    name="description"
+    content="A starter Heartopia daily checklist page for daily tasks, stamina priorities, reward routes, and repeat-visit guide content."
+  >
+  <style>
+    :root {
+      --bg: #f9f4e6;
+      --panel: rgba(255, 251, 244, 0.9);
+      --text: #2d251e;
+      --muted: #6b6258;
+      --accent: #cc6a3c;
+      --line: rgba(84, 60, 38, 0.14);
+      --shadow: 0 20px 50px rgba(88, 57, 26, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Georgia, "Times New Roman", serif; color: var(--text);
+      line-height: 1.65; background: linear-gradient(180deg, #fbf6ec 0%, #ede0c4 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0;
+    }
+    .brand { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 0.95rem; }
+    .hero, .grid, .card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow);
+    }
+    .hero { padding: 30px; margin-bottom: 20px; }
+    .eyebrow {
+      display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(204, 106, 60, 0.13);
+      color: #8f431f; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    h1, h2, h3 { margin: 0; line-height: 1.1; }
+    h1 { margin-top: 16px; font-size: clamp(2.2rem, 4vw, 4rem); max-width: 12ch; }
+    p { margin: 0; }
+    .lead { margin-top: 16px; color: var(--muted); max-width: 60ch; }
+    .grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; overflow: hidden; margin-bottom: 28px;
+    }
+    .card { padding: 24px; border-radius: 0; box-shadow: none; border: 0; border-right: 1px solid var(--line); }
+    .card:last-child { border-right: 0; }
+    .card h3 { margin-bottom: 10px; font-size: 1.15rem; }
+    .card p, .card li { color: var(--muted); }
+    .card ul { margin: 14px 0 0; padding-left: 18px; }
+    footer { padding: 0 0 36px; color: var(--muted); font-size: 0.94rem; }
+    @media (max-width: 860px) {
+      .topbar { flex-direction: column; align-items: start; }
+      .grid { grid-template-columns: 1fr; }
+      .card { border-right: 0; border-bottom: 1px solid var(--line); }
+      .card:last-child { border-bottom: 0; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">Heartopia Strategy</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="beginner-guide.html">Beginner</a>
+        <a href="resources-map.html">Resources</a>
+        <a href="updates-bugs.html">Updates</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="eyebrow">Repeat-visit content</span>
+        <h1>Heartopia daily checklist players can skim every session</h1>
+        <p class="lead">
+          This page should become the most revisited article on the site. The job is to turn a long
+          list of possible tasks into a clean, ordered routine.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Daily route</h3>
+          <p>
+            Start the article with the exact order of high-value daily actions. Make it fast enough
+            for returning players to skim in under a minute.
+          </p>
+          <ul>
+            <li>Claim quick rewards</li>
+            <li>Do limited daily content first</li>
+            <li>Spend time-gated resources before free farming</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Resource priorities</h3>
+          <p>
+            A good checklist page explains what is worth spending today and what should be saved for
+            better progression later.
+          </p>
+          <ul>
+            <li>Stamina usage</li>
+            <li>Currency spending notes</li>
+            <li>Shortlist of skip-worthy activities</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Expansion ideas</h3>
+          <p>
+            Over time, this page can branch into separate guides for weekly routines, event
+            checklists, and best farming loops.
+          </p>
+          <ul>
+            <li>Weekly reset page</li>
+            <li>Event-specific checklists</li>
+            <li>Best daily rewards article</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      Daily checklist skeleton page for the Heartopia strategy site.
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heartopia Strategy | Beginner Guide, Daily Checklist, Resources & Updates</title>
+  <meta
+    name="description"
+    content="Heartopia Strategy is an English guide site prototype for beginner progression, daily checklist routes, materials and map lookup, FAQs, and update tracking."
+  >
+  <style>
+    :root {
+      --bg: #f5ecdc;
+      --bg-deep: #efe0c1;
+      --panel: rgba(255, 251, 244, 0.88);
+      --panel-strong: #fffaf1;
+      --text: #2d251e;
+      --muted: #6b6258;
+      --accent: #cc6a3c;
+      --accent-deep: #8f431f;
+      --line: rgba(84, 60, 38, 0.14);
+      --shadow: 0 20px 50px rgba(88, 57, 26, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(239, 185, 131, 0.55), transparent 28%),
+        radial-gradient(circle at top right, rgba(180, 215, 196, 0.45), transparent 25%),
+        linear-gradient(180deg, #fbf5ea 0%, #f1e4cb 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 0;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+      padding: 16px 0 30px;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .section-card,
+    .guide-card,
+    .update-card,
+    .faq-item {
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .section-card,
+    .guide-card,
+    .update-card,
+    .faq-item {
+      padding: 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(204, 106, 60, 0.13);
+      color: var(--accent-deep);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(2.6rem, 5vw, 4.9rem);
+      max-width: 10ch;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .lead {
+      margin-top: 18px;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #fff9f2;
+    }
+
+    .button.secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .meta-box {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(84, 60, 38, 0.08);
+    }
+
+    .meta-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .hero-panel h2 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+
+    .checklist,
+    .bullet-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 18px 0 0;
+      list-style: none;
+    }
+
+    .checklist li,
+    .bullet-list li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(84, 60, 38, 0.08);
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 20px 0 6px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      margin-top: 8px;
+      max-width: 64ch;
+      color: var(--muted);
+    }
+
+    .needs-grid,
+    .guides-grid,
+    .updates-grid,
+    .faq-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .needs-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .guides-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .updates-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .faq-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-bottom: 56px;
+    }
+
+    .section-card h3,
+    .guide-card h3,
+    .update-card h3,
+    .faq-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .section-card p,
+    .guide-card p,
+    .update-card p,
+    .faq-item p,
+    .guide-card li,
+    .update-card li {
+      color: var(--muted);
+    }
+
+    .guide-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .guide-card ul,
+    .update-card ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .guide-card .button,
+    .update-card .button {
+      width: fit-content;
+    }
+
+    footer {
+      padding: 0 0 36px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .needs-grid,
+      .guides-grid,
+      .updates-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar,
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">Heartopia Strategy</a>
+      <nav class="nav">
+        <a href="#guides">Guides</a>
+        <a href="#needs">Needs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="updates-bugs.html">Updates</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">English game guide site MVP</span>
+          <h1>Heartopia answers for the questions players actually search.</h1>
+          <p class="lead">
+            This site is structured around real gameplay intent: what to do first, what to do
+            every day, where to find things, and how to solve problems after updates.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="beginner-guide.html">Start With Beginner Guide</a>
+            <a class="button secondary" href="daily-checklist.html">Open Daily Checklist</a>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-box">
+              <strong>New players</strong>
+              Need a fast first-hour route and early priorities.
+            </div>
+            <div class="meta-box">
+              <strong>Returning players</strong>
+              Want a clean daily loop and quick update context.
+            </div>
+            <div class="meta-box">
+              <strong>Search users</strong>
+              Usually want one direct answer about a system or item.
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <h2>What makes a useful guide site</h2>
+          <p class="lead" style="margin-top: 0;">
+            The homepage should route people into the right content path instead of forcing them
+            to read a giant wall of text.
+          </p>
+          <ul class="checklist">
+            <li><strong>Start here pages:</strong> beginner route, daily loop, key systems.</li>
+            <li><strong>Lookup pages:</strong> resources, NPCs, map locations, unlock conditions.</li>
+            <li><strong>Timely pages:</strong> bug workarounds, patch changes, missing features.</li>
+            <li><strong>Internal links:</strong> turn broad guides into article clusters over time.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section" id="guides">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Core pages</span>
+            <h2>The first content structure to build</h2>
+            <p>
+              These pages are enough to make the project feel like a real strategy site instead of
+              a single landing page.
+            </p>
+          </div>
+        </div>
+        <div class="guides-grid">
+          <article class="guide-card">
+            <div>
+              <h3>Beginner Guide</h3>
+              <p>
+                Covers the first hour, first day, progression order, upgrade priorities, and
+                common early mistakes.
+              </p>
+            </div>
+            <ul>
+              <li>First hour priorities</li>
+              <li>Best early unlocks</li>
+              <li>Mistakes to avoid</li>
+            </ul>
+            <a class="button primary" href="beginner-guide.html">Read Guide</a>
+          </article>
+          <article class="guide-card">
+            <div>
+              <h3>Daily Checklist</h3>
+              <p>
+                Gives players a repeatable routine so they can spend stamina well and collect the
+                most valuable daily rewards.
+              </p>
+            </div>
+            <ul>
+              <li>Daily task order</li>
+              <li>Fast reward loop</li>
+              <li>Reset routine</li>
+            </ul>
+            <a class="button primary" href="daily-checklist.html">Open Checklist</a>
+          </article>
+          <article class="guide-card">
+            <div>
+              <h3>Map & Resources</h3>
+              <p>
+                Helps players find farming spots, important facilities, NPCs, and progression
+                locations without digging through forum posts.
+              </p>
+            </div>
+            <ul>
+              <li>Material lookup</li>
+              <li>Location references</li>
+              <li>Unlock notes</li>
+            </ul>
+            <a class="button primary" href="resources-map.html">Browse Resources</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="needs">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">User needs</span>
+            <h2>What players come here to solve</h2>
+            <p>
+              The most important content is the content that reduces friction right now. These four
+              jobs should shape the early roadmap.
+            </p>
+          </div>
+        </div>
+        <div class="needs-grid">
+          <article class="section-card">
+            <h3>Onboarding</h3>
+            <p>
+              New players want a fast answer to “what should I do first?” and usually leave if they
+              cannot find that answer quickly.
+            </p>
+          </article>
+          <article class="section-card">
+            <h3>Routine</h3>
+            <p>
+              Daily checklist content creates repeat visits because players come back every session
+              to confirm priorities.
+            </p>
+          </article>
+          <article class="section-card">
+            <h3>Lookup</h3>
+            <p>
+              Resource and system pages support long-tail SEO and help the site grow beyond just a
+              few broad guides.
+            </p>
+          </article>
+          <article class="section-card">
+            <h3>Troubleshooting</h3>
+            <p>
+              Updates, bugs, and feature confusion drive urgent search traffic and make the site
+              feel actively maintained.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Fresh content lanes</span>
+            <h2>Keep the site useful between major guides</h2>
+            <p>
+              Not every page has to be a giant article. Smaller update and FAQ pages create trust
+              and keep the content fresh.
+            </p>
+          </div>
+        </div>
+        <div class="updates-grid">
+          <article class="update-card">
+            <h3>Updates & Bugs</h3>
+            <p>
+              Track gameplay changes, known issues, and short workaround notes so players know the
+              site reflects the current version.
+            </p>
+            <ul>
+              <li>Patch change summaries</li>
+              <li>Known issue notes</li>
+              <li>Temporary workarounds</li>
+            </ul>
+            <div class="cta-row">
+              <a class="button primary" href="updates-bugs.html">View Updates</a>
+            </div>
+          </article>
+          <article class="update-card">
+            <h3>FAQ Hub</h3>
+            <p>
+              Short answers work well for both readers and search engines. Use FAQ pages to capture
+              broad questions and link people into deeper guides.
+            </p>
+            <ul>
+              <li>Quick beginner answers</li>
+              <li>System clarification</li>
+              <li>Internal links to detailed pages</li>
+            </ul>
+            <div class="cta-row">
+              <a class="button primary" href="faq.html">Read FAQ</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Homepage FAQs</span>
+            <h2>Questions worth answering fast on the front page</h2>
+            <p>
+              These questions can stay short here while also turning into dedicated content later.
+            </p>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>What should I do first in Heartopia?</h3>
+            <p>
+              Point the user to a simple opening route with the first systems to unlock and early
+              mistakes to avoid.
+            </p>
+          </article>
+          <article class="faq-item">
+            <h3>What are the best daily tasks?</h3>
+            <p>
+              Daily checklist content is one of the strongest return-visit hooks for this kind of
+              site.
+            </p>
+          </article>
+          <article class="faq-item">
+            <h3>Where do I find important materials?</h3>
+            <p>
+              Resource lookup pages support long-tail search and usually become the biggest content
+              cluster over time.
+            </p>
+          </article>
+          <article class="faq-item">
+            <h3>Did an update change or break something?</h3>
+            <p>
+              Timely update notes and workaround pages build trust because users can see the site is
+              actively maintained.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Heartopia Strategy MVP site structure: homepage, article skeletons, and early content lanes
+      for SEO, repeat visits, and future expansion.
+    </footer>
+  </div>
+</body>
+</html>
