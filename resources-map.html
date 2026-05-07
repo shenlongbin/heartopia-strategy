@@ -32,7 +32,7 @@
     }
     .brand { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
     .nav { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 0.95rem; }
-    .hero, .grid, .card {
+    .hero, .grid, .card, .media-banner {
       background: var(--panel); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow);
     }
     .hero { padding: 30px; margin-bottom: 20px; }
@@ -47,14 +47,47 @@
     .grid {
       display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-bottom: 28px;
     }
+    .media-layout {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .media-banner, .card { padding: 24px; }
     .card { padding: 24px; }
     .card h3 { margin-bottom: 10px; font-size: 1.15rem; }
     .card p, .card li { color: var(--muted); }
     .card ul { margin: 14px 0 0; padding-left: 18px; }
+    .media-banner img {
+      display: block;
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(84, 60, 38, 0.12);
+    }
+    .caption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .media-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .media-list li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(84, 60, 38, 0.08);
+      color: var(--muted);
+    }
     footer { padding: 0 0 36px; color: var(--muted); font-size: 0.94rem; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; }
     @media (max-width: 860px) {
       .topbar { flex-direction: column; align-items: start; }
+      .media-layout,
       .grid { grid-template-columns: 1fr; }
       h1 { max-width: none; }
     }
@@ -81,6 +114,25 @@
           Resource and map content is where guide sites usually grow the most. These pages answer
           the very specific questions users type when they only need one direct result.
         </p>
+      </section>
+
+      <section class="media-layout">
+        <article class="media-banner">
+          <img src="assets/media/heartopia-animal-map.svg" alt="Heartopia inspired wildlife route map">
+          <p class="caption">
+            A map-style visual block that matches the screenshot direction you shared and gives the
+            resources hub a more image-led presentation.
+          </p>
+        </article>
+        <article class="card">
+          <h3>How to use media on this guide page</h3>
+          <ul class="media-list">
+            <li><strong>Top map:</strong> one large annotated overview image for each route or region.</li>
+            <li><strong>Inset scenes:</strong> cropped screenshots for exact animal trough or resource spots.</li>
+            <li><strong>Labels:</strong> pair every image with the animal, item, or facility name.</li>
+            <li><strong>Update habit:</strong> replace art blocks with fresh screenshots as the guide expands.</li>
+          </ul>
+        </article>
       </section>
 
       <section class="grid">

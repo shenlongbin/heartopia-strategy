@@ -1,0 +1,31 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="36" fill="#7BC7E5"/>
+  <rect width="1200" height="760" rx="36" fill="url(#bg)"/>
+  <path d="M0 518C145 452 267 420 365 424C454 428 536 478 620 481C713 485 813 430 917 421C1032 411 1118 444 1200 477V760H0V518Z" fill="#C7E89A"/>
+  <path d="M32 566C136 498 279 488 396 521C484 545 583 604 685 594C785 584 883 517 988 500C1064 488 1138 498 1200 528V760H32V566Z" fill="#A9D879"/>
+  <path d="M541 199C590 122 661 83 754 81C848 79 917 134 956 204C991 268 986 358 932 409C893 446 833 457 770 444C712 431 667 390 612 383C556 376 491 394 448 363C394 324 394 248 441 213C467 194 499 190 541 199Z" fill="#F6E1BC"/>
+  <path d="M201 339C253 277 333 251 414 261C481 269 542 311 557 373C570 430 532 497 471 527C401 561 302 555 247 502C190 448 158 390 201 339Z" fill="#F8D9AA"/>
+  <circle cx="840" cy="114" r="42" fill="#FFF5CC"/>
+  <path d="M153 547C153 475 211 417 283 417H335C407 417 465 475 465 547V583H153V547Z" fill="#E59D6E"/>
+  <rect x="182" y="455" width="253" height="144" rx="24" fill="#F7E9CD"/>
+  <rect x="230" y="417" width="157" height="76" rx="28" fill="#8AD0F0"/>
+  <path d="M273 458H344V600H273V458Z" fill="#F1B85D"/>
+  <path d="M248 508H369L392 600H225L248 508Z" fill="#D48152"/>
+  <path d="M676 476C676 421 721 376 776 376H791C846 376 891 421 891 476V600H676V476Z" fill="#EBF5D8"/>
+  <path d="M715 503H851V600H715V503Z" fill="#B9E19B"/>
+  <path d="M699 484L783 430L868 484H699Z" fill="#95CC77"/>
+  <circle cx="933" cy="472" r="46" fill="#F6C9A8"/>
+  <circle cx="933" cy="459" r="21" fill="#FFF6EC"/>
+  <circle cx="917" cy="446" r="12" fill="#A86D4B"/>
+  <circle cx="950" cy="446" r="12" fill="#A86D4B"/>
+  <ellipse cx="934" cy="475" rx="18" ry="11" fill="#A86D4B"/>
+  <path d="M520 684C594 632 676 607 758 607C844 607 924 635 994 684V760H520V684Z" fill="#73A85E"/>
+  <text x="90" y="100" fill="#FFFDF7" font-family="Arial, sans-serif" font-size="76" font-weight="700">Heartopia Strategy</text>
+  <text x="92" y="160" fill="#F7FEFF" font-family="Arial, sans-serif" font-size="32" font-weight="700">Cozy routes, map lookup, and daily guide planning</text>
+  <defs>
+    <linearGradient id="bg" x1="600" y1="0" x2="600" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7CC8F4"/>
+      <stop offset="1" stop-color="#BEEAF7"/>
+    </linearGradient>
+  </defs>
+</svg>

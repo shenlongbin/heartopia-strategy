@@ -84,6 +84,7 @@
 
     .hero-copy,
     .hero-panel,
+    .media-frame,
     .section-card,
     .guide-card,
     .update-card,
@@ -97,6 +98,7 @@
 
     .hero-copy,
     .hero-panel,
+    .media-frame,
     .section-card,
     .guide-card,
     .update-card,
@@ -192,6 +194,26 @@
       margin-bottom: 12px;
     }
 
+    .media-frame {
+      margin-top: 22px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .media-frame img,
+    .guide-card img {
+      display: block;
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(84, 60, 38, 0.12);
+    }
+
+    .caption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
     .checklist,
     .bullet-list {
       display: grid;
@@ -230,6 +252,7 @@
 
     .needs-grid,
     .guides-grid,
+    .media-grid,
     .updates-grid,
     .faq-grid {
       display: grid;
@@ -242,6 +265,11 @@
 
     .guides-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .media-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: start;
     }
 
     .updates-grid {
@@ -276,6 +304,22 @@
       gap: 16px;
     }
 
+    .media-notes {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .media-notes li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(84, 60, 38, 0.08);
+      color: var(--muted);
+    }
+
     .guide-card ul,
     .update-card ul {
       padding-left: 18px;
@@ -304,6 +348,7 @@
       .hero,
       .needs-grid,
       .guides-grid,
+      .media-grid,
       .updates-grid,
       .faq-grid {
         grid-template-columns: 1fr;
@@ -382,6 +427,12 @@
             <li><strong>Timely pages:</strong> bug workarounds, patch changes, missing features.</li>
             <li><strong>Internal links:</strong> turn broad guides into article clusters over time.</li>
           </ul>
+          <div class="media-frame">
+            <img src="assets/media/heartopia-cozy-hero.svg" alt="Illustrated Heartopia strategy hero art">
+            <p class="caption">
+              Original SVG site art gives the homepage a polished visual while the screenshot library grows.
+            </p>
+          </div>
         </aside>
       </section>
 
@@ -484,6 +535,38 @@
               Updates, bugs, and feature confusion drive urgent search traffic and make the site
               feel actively maintained.
             </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Visual guide layer</span>
+            <h2>Media makes a cozy game guide easier to trust</h2>
+            <p>
+              The screenshot you shared is exactly the right direction for this project: annotated
+              maps, wildlife callouts, and location previews are the kinds of visuals players save
+              and revisit.
+            </p>
+          </div>
+        </div>
+        <div class="media-grid">
+          <article class="guide-card">
+            <img src="assets/media/heartopia-animal-map.svg" alt="Illustrated Heartopia-style route map">
+            <p>
+              This map-style artwork gives the site a stronger editorial identity and sets up the
+              resources section to become a real media hub, not just a text archive.
+            </p>
+          </article>
+          <article class="guide-card">
+            <h3>Best media types to keep adding</h3>
+            <ul class="media-notes">
+              <li><strong>Annotated maps:</strong> animal troughs, NPC routes, materials, and unlock areas.</li>
+              <li><strong>Step screenshots:</strong> menus, crafting screens, and daily route flow.</li>
+              <li><strong>Bug examples:</strong> before-and-after comparisons after updates.</li>
+              <li><strong>Guide covers:</strong> one strong banner per major guide page.</li>
+            </ul>
           </article>
         </div>
       </section>
