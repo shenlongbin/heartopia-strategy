@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shenlongbin.github.io/heartopia-strategy/sitemap.xml
